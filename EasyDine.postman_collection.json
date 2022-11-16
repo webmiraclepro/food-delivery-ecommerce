@@ -1,0 +1,1196 @@
+{
+	"info": {
+		"_postman_id": "3ad44e7a-1313-46cd-8bef-7e586e7365c8",
+		"name": "EasyDine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4768300"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Reza Rajabi\",\r\n    \"email\": \"rezaprasds2@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get Customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/customers/all/{{StoreID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"customers",
+								"all",
+								"{{StoreID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Reza Rajabi 2\",\r\n    \"email\" : \"rezapr2@gmail.com\",\r\n    \"number\" : \"989380904517\",\r\n    \"address\" : [\r\n        {\r\n            \"address\": \"13 Capcroft road , Birmingham\",\r\n            \"post_code\": \"B18 0JB\"\r\n        }\r\n    ],\r\n    \"store\" : \"6366e40dd7d2b2220089a24c\",\r\n    \"password\" : \"123456\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/customers",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/customers/{{CustomerID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"customers",
+								"{{CustomerID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stores",
+			"item": [
+				{
+					"name": "Get Stores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uid\": \"6350654b0227d395deb0dd31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/stores/user/6366e405d7d2b2220089a249",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"stores",
+								"user",
+								"6366e405d7d2b2220089a249"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Store",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Reza Rajabi 2\",\r\n    \"creator\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/stores/62d3fdddebfcd2c4643f235c",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"stores",
+								"62d3fdddebfcd2c4643f235c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Reza Rajabi\",\r\n    \"creator\": \"635064e50227d395deb0dd2f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/stores",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Store",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/stores/62d454a55ebeb73a88688ed4",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"stores",
+								"62d454a55ebeb73a88688ed4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Category",
+			"item": [
+				{
+					"name": "Get All Product Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/category/all/{{StoreID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"category",
+								"all",
+								"{{StoreID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Product Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://easydine-backend.herokuapp.com/api/category/all/6350654b0227d395deb0dd31",
+									"protocol": "https",
+									"host": [
+										"easydine-backend",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"category",
+										"all",
+										"6350654b0227d395deb0dd31"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Single Product Category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/category/{{CategoryID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"category",
+								"{{CategoryID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Product Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://easydine-backend.herokuapp.com/api/category/6350654b0227d395deb0dd31",
+									"protocol": "https",
+									"host": [
+										"easydine-backend",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"category",
+										"6350654b0227d395deb0dd31"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Update Product Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addons\": \"Pizza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/category/{{CategoryID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"category",
+								"{{CategoryID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Product Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sandwich\",\r\n    \"description\": \"test description test\",\r\n    \"store\" : \"6350654b0227d395deb0dd31\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/category",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Product Addon Group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sandwich\",\r\n    \"description\": \"test description test\",\r\n    \"type\": \"addon\",\r\n    \"store\" : \"62d63e7320208122246d4533\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/category",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/category/{{CategoryID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"category",
+								"{{CategoryID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/products/all/{{StoreID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products",
+								"all",
+								"{{StoreID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By CategoryID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/products/category/{{CategoryID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"{{CategoryID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pizza\",\r\n    \"type\": \"simple\",\r\n    \"price\": 32,\r\n    \"marks\": [\"hot\", \"vegan\"],\r\n    \"categoryId\": \"62fcb6f37b8336d2dae3c979\",\r\n    \"store\" : \"6350654b0227d395deb0dd31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/products",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pizza 4\",\r\n    \"categoryId\": \"62e02b3dd2af7cc3cdd4677e\",\r\n    \"store\" : \"62d5a7a9fd5b56ffbc1ad565\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/products/{{ProductID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products",
+								"{{ProductID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/products/{{ProductID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products",
+								"{{ProductID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get All Orders By StoreID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/orders/all/{{StoreID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"orders",
+								"all",
+								"{{StoreID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders By CustomerID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/orders/user/{{CustomerID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"orders",
+								"user",
+								"{{CustomerID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"store\" : \"6366e40dd7d2b2220089a24c\",\r\n    \"customerId\" : \"636917df879bb826734e2369\",\r\n    \"products\" : [\r\n        {\r\n            \"quantity\": 2,\r\n            \"price\": 4.99,\r\n            \"name\": \"Margherrita\",\r\n            \"productId\": \"6368e7d177ebf073f27842a5\"\r\n        },\r\n        {\r\n            \"quantity\": 3,\r\n            \"price\": 4.99,\r\n            \"name\": \"Hawaiian\",\r\n            \"productId\": \"6368e7d477ebf073f27842b7\"\r\n        }\r\n    ],\r\n    \"address\" : \"13 Capcroft road , Birmingham\",\r\n    \"post_code\" : \"B13 0JB\",\r\n    \"location\" : \"{\\\"lat\\\":52.455087,\\\"lng\\\":-1.86728}\",\r\n    \"number\" : \"98380904517\",\r\n    \"type\" : \"delivery\",\r\n    \"payment_type\" : \"cash\",\r\n    \"comment\" : \"Please do not ring the bell\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/orders",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/store/orders/{{OrderID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"store",
+								"orders",
+								"{{OrderID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"preparing\",\r\n    \"value\": \"20\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/store/orders/{{OrderID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"store",
+								"orders",
+								"{{OrderID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Get Reviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sid\": \"62d63e7320208122246d4533\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/reviews/all/{{StoreID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reviews",
+								"all",
+								"{{StoreID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"store\" : \"62d63e7320208122246d4533\",\r\n    \"customer\" : \"633b45b83c8146ebac4911d6\",\r\n    \"rate\": 2,\r\n    \"order\" : \"635d94c3a20288a866ab0bf3\",\r\n    \"description\" : \"Please do not ring the bell Please do not ring the bellPlease do not ring the bellPlease do not ring the bellPlease do not ring the bell\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/reviews",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/reviews/{{ReviewID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reviews",
+								"{{ReviewID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"accepted\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/reviews/{{ReviewID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reviews",
+								"{{ReviewID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Promotions",
+			"item": [
+				{
+					"name": "Get Promotions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/promotions/all/{{StoreID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"promotions",
+								"all",
+								"{{StoreID}}"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "meal_deal",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Promotion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"description\": \"test test\",\r\n    \"type\": \"meal_deal\",\r\n    \"status\": \"active\",\r\n    \"store\" : \"62d63e7320208122246d4533\",\r\n    \"meta\" : {\r\n        \"price\": \"25\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/promotions",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"promotions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Promotion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/promotions/{{PromotionID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"promotions",
+								"{{PromotionID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Promotion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"preparing\",\r\n    \"value\": \"20\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/promotions/{{PromotionID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"promotions",
+								"{{PromotionID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "New Setting",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/settings",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Multiple Settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\"min_order_price_collection\", \"min_order_price_delivery\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/settings/multiple/{{StoreID}}",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"settings",
+								"multiple",
+								"{{StoreID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "StoreID",
+			"value": "6350654b0227d395deb0dd31"
+		},
+		{
+			"key": "API_URL",
+			"value": "https://easydine-backend.herokuapp.com/api"
+		}
+	]
+}
