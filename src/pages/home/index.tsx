@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState, AppDispatch } from '../../state/store';
 import { addPerson, removePerson, getPersons } from '../../state/person/reducer';
+import NextJsCarousel from "../../components/Carousel";
 
 export default function HomePage() {
 
@@ -19,6 +20,7 @@ export default function HomePage() {
    
     return (
         <div className='flex flex-col justify-center items-center'>
+            <NextJsCarousel/>
                 <div className='flex flex-col my-5 text-blue-400'>
                     <div className='flex flex-row items-center justify-between justify-center'>
                        
