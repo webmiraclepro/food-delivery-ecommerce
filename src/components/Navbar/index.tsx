@@ -1,10 +1,15 @@
 import Link from 'next/link'
 import React, { useState, useEffect, useRef } from "react";
-const close_icon = '/svg/close_icon.svg';
-const hamburgerIcon = '/svg/hamburger.svg';
+
+const logo = "/images/logo.png";
+const close_icon = "/svg/close_icon.svg";
+const hamburgerIcon = "/svg/hamburger.svg";
 const menuIcon = "/svg/menu.svg";
 const accountIcon = "/svg/account.svg";
 const websiteIcon = "/svg/Vector.svg";
+const basket = "/images/basket.png"
+
+console.log("Miracle==>", hamburgerIcon)
 
 function useOutsideAlerter(ref: any, setOpenNav: any) {
     useEffect(() => {
@@ -25,7 +30,7 @@ function useOutsideAlerter(ref: any, setOpenNav: any) {
 }
 
 
-const Navbar = ({ logo }: any) => {
+const Navbar = () => {
 
     const [openNav, setOpenNav] = useState(false);
 
@@ -34,7 +39,7 @@ const Navbar = ({ logo }: any) => {
 
 
     return (
-        <div className="bg-bgprimary">
+        <div className="bg-white">
             {/* Mobile Nav */}
 
             <a onClick={() => setOpenNav(true)} className="absolute left-[40px] top-[20px] w-[30px] h-auto hover:text-navhover visible xl:invisible">
@@ -75,32 +80,47 @@ const Navbar = ({ logo }: any) => {
                     </div>
                 </div>
             }
-            <div className="flex border-[#e7e8ec] sticky items-center p-0 pt-5 xl:p-5 invisible xl:visible">
+            <div className="flex sticky items-center w-full p-0 pt-5 xl:p-5 invisible xl:visible">
                 {/* Desktop Nav */}
 
-                <div className="flex space-x-16 items-center hidden xl:flex">
+                <div className="flex flex-row items-center w-full justify-between hidden xl:flex">
                     <Link href="/" >
-                        <img className="flex h-full w-full items-center" src={logo} alt="logo" />
+                        <img className="flex h-full w-full items-center ml-10" src={logo} alt="logo" />
                     </Link>
-                    <Link href="/">
-                        <div className="flex text-xl font-body transition-all hover:text-navhover">
-                            <img src={websiteIcon} className="w-[25px] pl-1" />
-                            Home
-                        </div>
-                    </Link>
-                    <Link href="#Menu">
+                    <div className='flex flex-row w-full justify-center items-center ml-64 space-x-16'>
 
-                        <div className="flex text-xl font-body transition-all hover:text-navhover">
-                            <img src={menuIcon} className="w-[25px] pl-1" />
-                            Menu
+                        <Link href="/">
+                            <div className="flex text-base transition-all hover:text-navhover">
+                                <img src={websiteIcon} className="w-full pr-4" />
+                                Home
+                            </div>
+                        </Link>
+                        <Link href="#Menu">
+
+                            <div className="flex text-base transition-all hover:text-navhover">
+                                <img src={menuIcon} className="w-full pr-4" />
+                                Menu
+                            </div>
+                        </Link>
+                        <Link href="#My Accout">
+                            <div className="flex text-base transition-all hover:text-navhover">
+                                <img src={accountIcon} className="w-[35px] pr-4" />
+                                My Account
+                            </div>
+                        </Link>
+                        <div className='flex flex-col'>
+                            <div className='text-green-700'>
+                                Open
+                            </div>
+                            <div className='text-grey-200 text-xs'>
+                                Accepting DoorDash orders until 11:39 PM
+                            </div>
                         </div>
-                    </Link>
-                    <Link href="#My Accout">
-                        <div className="flex text-xl font-body transition-all hover:text-navhover">
-                            <img src={accountIcon} className="w-[25px] pl-1" />
-                            My Account
-                        </div>
-                    </Link>
+                    </div>
+                    <div className='flex flex-row items-center justify-center space-x-4 bg-[#334155] mr-8 w-[80px] h-[35px] border rounded-2xl'>
+                        <img src={basket} className=" w-[15px] h-[15px]" />
+                        <span className='text-white py-1'>3</span>
+                    </div>
                 </div>
 
             </div>
