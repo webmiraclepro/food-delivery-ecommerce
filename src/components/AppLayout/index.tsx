@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Footer from '../Footer';
 import Navbar from '../Navbar';
 
 
@@ -14,6 +15,7 @@ const AppLayout = ({ children }: { children: JSX.Element }) => {
             <main>
                 {children}
             </main>
+            <Footer/>
         </div>
     )
 }
