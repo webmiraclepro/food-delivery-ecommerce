@@ -5,7 +5,7 @@ const CardReview = (props: any) => {
     return (
         <div className="flex flex-col border border-solid border-[#E4E4E7] p-4 rounded-xl">
             <div className="flex flex-row items-center justify-between">
-                <div className="text-xl font-bold">{person}:</div>
+                <div className="text-xl font-bold text-slate-900">{person}:</div>
                 <div>
 
                     <StarRatings
@@ -19,7 +19,7 @@ const CardReview = (props: any) => {
                 </div>
             </div>
 
-            <div className='text-gray-400 text-base py-2'>{review}</div>
+            <div className='text-gray-600 text-base py-2'>{review}</div>
         </div>
     )
 }

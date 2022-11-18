@@ -43,6 +43,7 @@ module.exports = {
       },
       colors: {
         'pink-caption': '#F4894A',
+        'primary': '#E5E7EB'
       },
     },
   },

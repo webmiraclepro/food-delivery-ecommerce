@@ -8,7 +8,7 @@ const FooterList = (porps: any) => {
     return (
         <div className="flex flex-row items-center">
             <span className="block rounded-lg w-[6px] h-[6px] bg-[#1E293B] mr-2"></span>
-            <span className="text-white text-sm">{title}</span>
+            <span className="text-gray-200 text-sm">{title}</span>
         </div>
     )
 }
@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="bg-white px-4 py-2 w-fit rounded-lg">
                 <img src={logo} alt="logo" />
             </div>
-            <div className="text-white text-base py-5 w-1/2 ">
+            <div className="text-gray-200 leading-7 text-sm py-5 w-1/2 ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Gravida pretium in nulla viverra nisl massa risus in egestas.
                 Orci massa adipiscing aenean maecenas arcu arcu. Auctor vitae nisl eleifend lectus nisl.

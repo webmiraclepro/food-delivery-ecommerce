@@ -58,21 +58,21 @@ const Navbar = () => {
                         </div>
                         <Link href="/">
 
-                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
+                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
                                 <img src={websiteIcon} className="ml-1" />
                                 Home
                             </div>
                         </Link>
                         <Link href="#Menu">
 
-                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
+                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
                                 <img src={menuIcon} className="ml-1" />
                                 Menu
                             </div>
                         </Link>
                         <Link href="#My-account">
 
-                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all hover:text-navhover">
+                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
                                 <img src={accountIcon} className="ml-1" />
                                 My Account
                             </div>
@@ -87,32 +87,32 @@ const Navbar = () => {
                     <Link href="/" >
                         <img className="flex h-full w-full items-center ml-10" src={logo} alt="logo" />
                     </Link>
-                    <div className='flex flex-row w-full justify-center items-center ml-64 space-x-16'>
+                    <div className='flex flex-row w-full justify-center items-center ml-64 gap-14'>
 
                         <Link href="/">
-                            <div className="flex text-base transition-all hover:text-navhover">
+                            <div className="flex text-base transition-all text-slate-800 hover:text-navhover">
                                 <img src={websiteIcon} className="w-full pr-4" />
                                 Home
                             </div>
                         </Link>
                         <Link href="#Menu">
 
-                            <div className="flex text-base transition-all hover:text-navhover">
+                            <div className="flex text-base transition-all text-slate-800 hover:text-navhover">
                                 <img src={menuIcon} className="w-full pr-4" />
                                 Menu
                             </div>
                         </Link>
                         <Link href="#My Accout">
-                            <div className="flex text-base transition-all hover:text-navhover">
+                            <div className="flex text-base transition-all text-slate-800 hover:text-navhover">
                                 <img src={accountIcon} className="w-[35px] pr-4" />
                                 My Account
                             </div>
                         </Link>
                         <div className='flex flex-col'>
-                            <div className='text-[#15803D]'>
+                            <div className='text-green-600 font-medium text-sm'>
                                 Open
                             </div>
-                            <div className='text-grey-200 text-xs'>
+                            <div className='text-zinc-600 text-xs'>
                                 Accepting DoorDash orders until 11:39 PM
                             </div>
                         </div>

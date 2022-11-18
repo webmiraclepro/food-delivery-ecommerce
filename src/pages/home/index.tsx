@@ -57,14 +57,14 @@ export default function HomePage() {
                     <CardCoupon heartNumber={29} foodIcon={food1} title="Peperoni Pizza" description="Hot beef with fry Hot beef with fry Hot beef with fry" price="30" />
                     <CardCoupon heartNumber={29} foodIcon={food1} title="Peperoni Pizza" description="Hot beef with fry Hot beef with fry Hot beef with fry" price="30" />
                 </div>
-                <div id="#kfc-restaurant" className="flex flex-row bg-kfc-restaurant bg-no-repeat w-full p-8 items-center justify-around bg-cover rounded-lg">
+                <div id="#kfc-restaurant" className="flex flex-row bg-kfc-restaurant bg-no-repeat w-full p-8 items-center justify-around bg-cover rounded-2xl">
                     <div className="flex flex-col">
                         <p className="font-bold text-white text-4xl py-2">Order in KFC Restourant</p>
                         <p className="text-white">Order in KFC Restourant and Order in KFC Restou</p>
                     </div>
-                    <div className="border border-[rgba(255,255,255,0.6) border-solid  rounded-md w-[690px] h-[100px] flex flex-row justify-center space-x-4  p-5 items-center">
-                        <div className="bg-[#F4894A] rounded-md px-24 py-5 text-white text-lg">Order Delivery</div>
-                        <div className="bg-[#475569] rounded-md px-24 py-5 text-white text-lg ">Order Collection</div>
+                    <div className="border border-[rgba(255,255,255,0.6)] border-solid  rounded-md flex flex-row justify-center gap-5  p-5 items-center">
+                        <div className="bg-pink-caption rounded-md px-24 py-5 text-white text-lg font-medium">Order Delivery</div>
+                        <div className="bg-slate-600 rounded-md px-24 py-5 text-white text-lg font-medium">Order Collection</div>
                     </div>
                 </div>
                 <div className="w-full text-2xl font-bold pt-20 pb-10">Review Customers</div>

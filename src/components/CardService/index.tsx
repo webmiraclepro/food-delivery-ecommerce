@@ -11,8 +11,8 @@ const CardService = ({ icon, title, description }: CardServiceProps) => {
         <div className='flex flex-row items-center justify-center'>
             <img src={icon} className="fast delivery" />
             <div className="flex flex-col px-2">
-                <p className="font-bold text-zink-800 text-xl">{title}</p>
-                <p className="text-zink-600">{description}</p>
+                <p className="font-bold text-zinc-800 text-xl">{title}</p>
+                <p className="text-zinc-600">{description}</p>
             </div>
         </div>
     )
