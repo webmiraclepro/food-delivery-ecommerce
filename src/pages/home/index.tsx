@@ -5,6 +5,7 @@ import CardService from "../../components/CardService";
 import CardOrder from "../../components/CardOrder";
 import Arrow from "../../components/Arrow";
 import CardCoupon from "../../components/CardCoupon";
+import CardReview from "../../components/CardReview";
 
 const deliveryIcon = "/images/delivery.png"
 const cashIcon = "/images/cash.png"
@@ -28,7 +29,7 @@ export default function HomePage() {
     return (
         <div className='flex flex-col items-center w-full'>
             <NextJsCarousel />
-            <div className="flex flex-col w-full px-20 items-center">
+            <div className=" max-w-xl w-full flex flex-col  px-10 items-center">
 
                 <div id="#card-service" className='flex flex-row py-10 justify-between w-full'>
                     <CardService icon={deliveryIcon} title="Fast Delivery" description="Fastest Delivery in Birmingham" />
@@ -56,7 +57,7 @@ export default function HomePage() {
                     <CardCoupon heartNumber={29} foodIcon={food1} title="Peperoni Pizza" description="Hot beef with fry Hot beef with fry Hot beef with fry" price="30" />
                     <CardCoupon heartNumber={29} foodIcon={food1} title="Peperoni Pizza" description="Hot beef with fry Hot beef with fry Hot beef with fry" price="30" />
                 </div>
-                <div id="#kfc-restaurant" className="flex flex-row bg-kfc-restaurant bg-no-repeat w-full p-8 items-center justify-around bg-cover">
+                <div id="#kfc-restaurant" className="flex flex-row bg-kfc-restaurant bg-no-repeat w-full p-8 items-center justify-around bg-cover rounded-lg">
                     <div className="flex flex-col">
                         <p className="font-bold text-white text-4xl py-2">Order in KFC Restourant</p>
                         <p className="text-white">Order in KFC Restourant and Order in KFC Restou</p>
@@ -65,6 +66,13 @@ export default function HomePage() {
                         <div className="bg-[#F4894A] rounded-md px-24 py-5 text-white text-lg">Order Delivery</div>
                         <div className="bg-[#475569] rounded-md px-24 py-5 text-white text-lg ">Order Collection</div>
                     </div>
+                </div>
+                <div className="w-full text-2xl font-bold pt-20 pb-10">Review Customers</div>
+                <div className="flex flex-row items-center justify-around gap-5">
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews."/>
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews."/>
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews."/>
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews."/>
 
                 </div>
             </div>
