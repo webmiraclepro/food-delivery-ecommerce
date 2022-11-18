@@ -9,8 +9,6 @@ const accountIcon = "/svg/account.svg";
 const websiteIcon = "/svg/Vector.svg";
 const basket = "/images/basket.png"
 
-console.log("Miracle==>", hamburgerIcon)
-
 function useOutsideAlerter(ref: any, setOpenNav: any) {
     useEffect(() => {
 
@@ -41,46 +39,58 @@ const Navbar = () => {
     return (
         <div className="bg-white">
             {/* Mobile Nav */}
-
-            <a onClick={() => setOpenNav(true)} className="absolute left-[40px] top-[20px] w-[30px] h-auto hover:text-navhover visible xl:invisible">
-                <img src={hamburgerIcon} className='w-[30px] h-auto' alt="hamburgerIcon" />
-            </a>
+            <div className='flex flex-row items-center p-4 justify-between block xl:hidden'>
+                {/* <a onClick={() => setOpenNav(true)} className="cursor-pointer"> */}
+                <img src={hamburgerIcon} className='w-[30px] h-auto cursor-pointer' alt="hamburgerIcon" onClick={() => setOpenNav(true)} />
+                {/* </a> */}
+                <img src={logo} className='w-fit h-auto' />
+                <div className="flex flex-row items-center">
+                    <span className="block rounded-lg w-[6px] h-[6px] bg-green-500 mr-2"></span>
+                    <span className="text-green-500 text-sm">Open</span>
+                </div>
+            </div>
 
             {
                 openNav &&
                 <div ref={wrapperRef} className="fixed z-10 top-0 left-0 bottom-0 right-0 h-full bg-[#000000bf] w-full">
-                    <div className="flex flex-col z-[11] fixed top-0 bottom-0 left-0 w-[250px] bg-white h-full pt-36 pl-6">
+                    <div className="flex flex-col z-[11] fixed top-0 bottom-0 left-0 w-[250px] bg-white h-full pt-24 pl-6">
                         <div onClick={() => setOpenNav(false)} className="absolute left-[40px] top-[20px]">
                             <img className="w-[30px] h-auto cursor-pointer" src={close_icon} alt="closeIcon" />
                         </div>
-                        <div className="pl-[5%]">
-                            <img src={logo} className='w-[50px] h-auto' />
-                        </div>
                         <Link href="/">
-
-                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
-                                <img src={websiteIcon} className="ml-1" />
+                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
                                 Home
                             </div>
                         </Link>
-                        <Link href="#Menu">
-
+                        <Link href="#Login">
                             <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
-                                <img src={menuIcon} className="ml-1" />
-                                Menu
+                                Login
                             </div>
                         </Link>
-                        <Link href="#My-account">
-
+                        <Link href="#Delivery-Menu">
                             <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
-                                <img src={accountIcon} className="ml-1" />
-                                My Account
+                                Delivery Menu
                             </div>
                         </Link>
+                        <Link href="#Collection-Menu">
+                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
+                                Collection Menu
+                            </div>
+                        </Link>
+                        <Link href="#Coupons">
+                            <div onClick={() => setOpenNav(false)} className="flex pl-2.5 pt-6 text-fsl font-bold transition-all text-slate-800 hover:text-navhover">
+                                Coupons
+                            </div>
+                        </Link>
+                        <div className='flex flex-col border-b-2 mt-auto'>
+                        </div>
+                        <div className='text-slate-800 p-2'>Contact</div>
+                        <div className='text-slate-800 p-2'>Terms & Conditions</div>
+                        <div className='text-slate-800 p-2'>Privacy Policy</div>
                     </div>
                 </div>
             }
-            <div className="flex sticky items-center w-full p-0 pt-5 xl:p-5 invisible xl:visible">
+            <div className="flex sticky items-center w-full p-0 pt-5 xl:p-5 hidden xl:block">
                 {/* Desktop Nav */}
 
                 <div className="flex flex-row items-center w-full justify-between hidden xl:flex">
@@ -88,7 +98,6 @@ const Navbar = () => {
                         <img className="flex h-full w-full items-center ml-10" src={logo} alt="logo" />
                     </Link>
                     <div className='flex flex-row w-full justify-center items-center ml-64 gap-14'>
-
                         <Link href="/">
                             <div className="flex text-base transition-all text-slate-800 hover:text-navhover">
                                 <img src={websiteIcon} className="w-full pr-4" />

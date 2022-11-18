@@ -8,7 +8,7 @@ const banner1 = "/images/banner1.png"
 const NextJsCarousel = () => {
 
     return (
-        <div className="">
+        <div className="px-10 xl:px-0">
             <Carousel
                 showThumbs={false}
                 emulateTouch={true}
