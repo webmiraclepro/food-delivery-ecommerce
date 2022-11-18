@@ -109,7 +109,7 @@ const Navbar = () => {
                             </div>
                         </Link>
                         <div className='flex flex-col'>
-                            <div className='text-green-700'>
+                            <div className='text-[#15803D]'>
                                 Open
                             </div>
                             <div className='text-grey-200 text-xs'>
