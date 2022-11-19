@@ -113,7 +113,7 @@ export default function HomePage() {
                 }
                 <div className="w-full text-2xl font-bold pt-5 xl:pt-20 pb-5 xl:pb-10">Review Customers</div>
             </div>
-                <div className="flex flex-row items-center justify-around gap-5 w-full overflow-auto bg-white py-4 px-0 xl:px-10 mb-5">
+                <div className="max-w-xl flex flex-row items-center justify-around gap-5 w-full overflow-auto bg-white py-4 px-0 xl:px-10 mb-5">
                     <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
                     <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
                     <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
