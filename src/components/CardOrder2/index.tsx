@@ -10,11 +10,11 @@ const line = '/images/line1.png'
 
 const CardOrder2 = ({ caption, title, description }: CardOrderProps) => {
     return (
-        <div className="flex flex-col min-w-[200px] min-h-[210px] w-fit bg-coupon-card bg-no-repeat bg-cover rounded-lg">
+        <div className="flex flex-col min-w-[200px] min-h-[210px] w-fit bg-coupon-card bg-no-repeat bg-[length:100%_100%] rounded-lg">
             <div className="flex flex-row items-center h-1/2">
-                <img src={coupon} alt="coupon" className="" />
+                <img src={coupon} alt="coupon" className="px-5" />
                 <div className="flex flex-col">
-                    <div className="px-1 pt-4 text-3xl font-bold text-pink-caption">{caption}</div>
+                    <div className="px-1 text-3xl font-bold text-pink-caption">{caption}</div>
                     <div className="px-1 pt-1 text-sm text-slate-900 font-bold">{title}</div>
                 </div>
             </div>

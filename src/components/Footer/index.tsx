@@ -15,7 +15,7 @@ const FooterList = (porps: any) => {
 
 const Footer = () => {
     return (
-        <div className="bg-white xl:bg-black w-full flex flex-col mt-12 px-20 py-10">
+        <div className="bg-white xl:bg-black w-full flex flex-col mt-12 px-5 xl:px-20 py-4 xl:py-10">
             <div className="bg-white px-4 py-2 w-fit rounded-lg">
                 <img src={logo} alt="logo" />
             </div>
