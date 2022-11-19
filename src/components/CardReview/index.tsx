@@ -3,7 +3,7 @@ import StarRatings from 'react-star-ratings';
 const CardReview = (props: any) => {
     const { person, rating, review } = props
     return (
-        <div className="flex flex-col border border-solid border-[#E4E4E7] p-4 rounded-xl">
+        <div className="flex flex-col border border-solid border-[#E4E4E7] min-w-[290px] p-2 xl:p-4 rounded-xl">
             <div className="flex flex-row items-center justify-between">
                 <div className="text-xl font-bold text-slate-900">{person}:</div>
                 <div>

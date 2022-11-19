@@ -10,7 +10,7 @@ const cardIconr = "/images/cardiconr.png"
 
 const CardOrder = ({caption, title, description, cardnumber}: CardOrderProps) => {
     return (
-        <div className="flex flex-col w-[320px] h-[137px] bg-order-card bg-no-repeat mx-auto">
+        <div className="flex flex-col h-[137px] bg-order-card bg-no-repeat bg-cover rounded-xl ml-3">
             <div className="px-4 pt-4 text-3xl font-bold text-pink-caption">{caption}</div>
             <div className="px-4 pt-1 text-sm text-slate-900 font-bold">{title}</div>
             <div className="px-3 pt-1 text-xs text-slate-600 font-medium">{description}</div>

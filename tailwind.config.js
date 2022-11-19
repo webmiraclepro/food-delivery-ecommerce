@@ -40,6 +40,7 @@ module.exports = {
       backgroundImage: {
         'order-card': "url('/images/bg-ordercard.png')",
         'kfc-restaurant': "url('/images/bg-kfc.png')",
+        'coupon-card': "url('/images/bg-coupon.png')",
       },
       colors: {
         'pink-caption': '#F4894A',
