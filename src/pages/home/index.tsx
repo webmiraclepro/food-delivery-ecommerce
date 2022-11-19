@@ -40,7 +40,7 @@ export default function HomePage() {
             <NextJsCarousel />
             <div className=" max-w-xl w-full flex flex-col  px-4 xl:px-10 items-center">
 
-                <div id="#card-service" className='flex flex-row py-10 justify-between w-full overflow-auto'>
+                <div id="#card-service" className='flex flex-row py-5 xl:py-10 justify-between w-full overflow-auto'>
                     <CardService icon={deliveryIcon} title="Fast Delivery" description="Fastest Delivery in Birmingham" />
                     <CardService icon={cashIcon} title="Card & Cash" description="Pay by cash or card" />
                     <CardService icon={checkIcon} title="Mouth Watering" description="Quality Food & Taste" />
@@ -68,7 +68,7 @@ export default function HomePage() {
                 }
                 {
                     !isDesktopOrLaptop &&
-                    <div className="w-full border border-[rgba(255,255,255,0.6)] border-solid rounded-md flex flex-row justify-center gap-4  p-5 items-center">
+                    <div className="w-full border border-[rgba(255,255,255,0.6)] bg-white mt-5 border-solid rounded-md flex flex-row justify-center gap-4  p-5 items-center">
                         <div className="w-full bg-pink-caption rounded-md py-3 text-white text-xs text-center font-medium">Order Delivery</div>
                         <div className="w-full border border-pink-caption bg-white rounded-md text-center py-3 text-pink-caption text-xs font-medium">Order Delivery</div>
                     </div>
@@ -112,14 +112,13 @@ export default function HomePage() {
                     </div>
                 }
                 <div className="w-full text-2xl font-bold pt-5 xl:pt-20 pb-5 xl:pb-10">Review Customers</div>
-                <div className="flex flex-row items-center justify-around gap-5 w-full overflow-auto">
-                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
-                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
-                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
-                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
-
-                </div>
             </div>
+                <div className="flex flex-row items-center justify-around gap-5 w-full overflow-auto bg-white py-4 px-0 xl:px-10 mb-5">
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
+                    <CardReview person="Pedro Alexander" rating={2} review="Customer reviews the paid versions let you create customizable review invitations, share ratings and reviews." />
+                </div>
         </div>
     )
 }

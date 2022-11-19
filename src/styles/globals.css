@@ -23,6 +23,14 @@ a {
   box-sizing: border-box;
 }
 
+
+@media screen and (max-width: 576px) {
+ 
+.control-dots {
+  display: flex;
+} 
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
